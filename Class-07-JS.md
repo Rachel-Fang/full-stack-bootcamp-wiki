@@ -459,7 +459,7 @@ this 的指向，是在调用函数时根据上下文所动态确定的
   }
 
   const sister = {
-      name = 'Tifa',
+      name: 'Tifa',
       getName: function(){
           return this.name;
       },
@@ -539,7 +539,7 @@ this 的指向，是在调用函数时根据上下文所动态确定的
 答案为：
 ```js
   o1 
-  o2 
+  o1 
   undefined 
 ```
 逻辑原理同6.2部分(重点看是谁调用)
