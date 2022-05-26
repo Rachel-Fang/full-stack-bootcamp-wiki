@@ -28,6 +28,7 @@
 - 具体例子：`Middleware1`是一个验证token的Middleware，发现错误后把错误参数传给`Error middleware`识别错误具体类型，最后一个`Error middleware`通常是为了记录下该错误，让错误尽快修复，通常返回500状态码
 - `Middleware`的触发是由路径决定的，只有route到该路径才会触发，而`errorMiddleware`是固定的，只要在`next()`里传入了参数就会进入到`erroMiddleware` chain上
 ![Middleware and errorMiddleware](./img/图43.jpg)
+> Cannor Get 的情况：没有这条路径或者没有相应的middleware处理这条路径
 - 代码示例：
 ```js
 //使用userInfo储存用户的所有信息，以便其他middleware调用
