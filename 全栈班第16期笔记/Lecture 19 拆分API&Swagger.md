@@ -74,7 +74,7 @@ PORT=4000
 const helmet = require('helmet');
 app.use(helmet());
 ```
-  
+![helmet](./img/图48.png)
 - winston
   - winston 中的日志记录级别，所有级别的严重性按数字顺序从最重要到最不重要
 ```
@@ -201,6 +201,7 @@ module.exports = swaggerJsDoc({
  *                 $ref: '#/components/schemas/Task' 引用单独申明的component
  */
 ```
+![swagger](./img/图49.png)
 #### 课后作业
 - 安装MongoDB
 
