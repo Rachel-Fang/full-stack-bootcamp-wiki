@@ -64,30 +64,61 @@
 - 命令行输入`mongo`，如果server已经打开，则会显示连接成功
 #### 20.2.2 Document and data types
 - _id: 自动生成，不指定类型，默认用 ObjectID
-- data types：
+- Name: Text(string)
+- Hobbies:array(array of string)
+- Address: object(embeded document)
+- Wishes: array(array of documents)
+- 其他常见data类型：
   - Boolean
   - Number(int32,int64,float)
   - Date(ISODate,timestamp)
 #### 20.2.3 Start mongo server
-- Run the following command in separate terminal
-  - mongod 在当前的命令行里启动并管理database server
+- Run the following command in separate terminals
+  - mongod 在当前的命令行里启动并管理database server(把terminal和mongo进程绑在一起）
   - mongo 
 - 把MongoDB当作服务启动：
   - 每次电脑启动时都会把MongoDB自动启动
 > 'mongod' is not recognized as an internal command解决方法：把`mongod.exe`所在的路径贴到命令行上，或加入系统环境变量
 - mongo shell：基于javascript的运行环境  
 #### 20.2.4 MongoDB Command
+- 显示当前数据库的databases
+  - `show dbs`
+- 显示当前数据库的集合
+  - `show collections` 
 - 使用数据库(可以使用当前存在的或者不存在的） 
   - `use school`
+  - 当数据库中有数据时，才会显示在db列表中
 - 输入数据
-  - `db.student.insertOne({name:"mason"})`
+  - 添加一个数据`db.students.insertOne({name:"mason"})`  name加不加双引号都可以，因为类似javascript，但是存起来之后是json格式，所以加了引号
+    - `db` 指向了当前的数据库 
+    - `students`对collection students进行操作
+    - `insertOne()`添加一个文档
+    - `{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("62adbcb4fd2f44f3aa3e8111") 
+      }` 如果没有指定id，MongoDB会帮我们自动生成一个id,id的生成没有规律
+  - 添加多个数据 `db.students.insertMany([{},{}])` 
+      
 - 查找数据
-  - `db.student.find()`
-- 查看collection
-  - 'show collection`
+  - `db.students.find()`
+  - `db.students.find({name:"mason"})` 找到所有包含name:mason的数据
+
 > { "_id" : ObjectId("629342745c178724d96c2a26"), "name" : "mason" } 与 { "_id" : "629342745c178724d96c2a26", "name" : "mason" } 是不同的数据类型
 - 更新数据
-- 
+  -`db.students.updateOne({name:"mason"},{$set:{name: "james"}})` 
+  - `db.students.updateOne({name:"mason"},{$set:{age: 20}})` 
+  - `db.students.updateOne({name:"mason"},{$set:{age: 20}},{upsert:true})` 找到就添加，没有找到就添加一个新的document包含我们想要的字段
+    - `{
+        "acknowledged" : true,
+        "matchedCount" : 0,
+        "modifiedCount" : 0,
+        "upsertedId" : ObjectId("62adcd1d0a0a4e438830a79c")
+       }`  
+    - `{ "_id" : ObjectId("62adcd1d0a0a4e438830a79c"), "name" : "jason", "age" : 20 }`
+  - update 找到第一个符合条件的document就更新了
+- 删除数据
+  - `db.students.deleteOne({name:"mason"})`
+  - `db.students.deleteMany({name:{$exists:true}})` 
 
 
 
