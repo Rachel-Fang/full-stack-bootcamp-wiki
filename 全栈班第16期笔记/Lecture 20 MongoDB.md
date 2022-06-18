@@ -7,6 +7,9 @@
   - [20.2 MongoDB](#202-mongodb)
   - [20.2.1 Structure Terminology](#2021-structure-terminology)
   - [20.2.2 Document and data types](#2022-document-and-data-types)
+  - [20.2.3 Start mongo server](#2023-start-mongo-server)
+  - [20.2.4 MongoDB Command](#2024-mongodb-command)
+  - [Quiz](#quiz)
 
 
 ## 课堂笔记
@@ -120,5 +123,15 @@
   - `db.students.deleteOne({name:"mason"})`
   - `db.students.deleteMany({name:{$exists:true}})` 
 
+#### Quiz
+
+- `db.students.insertOne({name:"mason",dob:new Date()})`
+- `db.students.insertMany([{name:"jason",dob:new Date()},{name:"eden",dob:new Date()}])` 
+- `db.students.updateOne({},{$set:{results:[80,90,100]}})`
+- `db.students.updateOne({name:"jason"},{$set:{results:[80,90,100]}})`
+- `db.students.updateOne({name:"eden"},{$set:{results:[90,100]}})`
+- `db.students.find({results:90},{name:1,result:1,_id:0})`
+- `db.students.deleteMany({})`
+- `db.students.drop()`
 
 
