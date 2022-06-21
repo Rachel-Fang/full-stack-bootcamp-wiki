@@ -195,4 +195,4 @@
     - postcode
     - student: (student id)  
   - many to many 
-  ![many to many](./img/图50.jpg）       
+  - ![many to many](./img/图50.jpg）       
