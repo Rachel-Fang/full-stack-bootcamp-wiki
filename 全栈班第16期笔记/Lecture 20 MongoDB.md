@@ -5,11 +5,13 @@
 - [Lecture 18 MongoDB](#Lecture-18-mongodb)
   - [20.1 数据库类型](#201-数据库类型)
   - [20.2 MongoDB](#202-mongodb)
-  - [20.2.1 Structure Terminology](#2021-structure-terminology)
-  - [20.2.2 Document and data types](#2022-document-and-data-types)
-  - [20.2.3 Start mongo server](#2023-start-mongo-server)
-  - [20.2.4 MongoDB Command](#2024-mongodb-command)
-  - [Quiz](#quiz)
+    - [20.2.1 Structure Terminology](#2021-structure-terminology)
+    - [20.2.2 Document and data types](#2022-document-and-data-types)
+    - [20.2.3 Start mongo server](#2023-start-mongo-server)
+    - [20.2.4 MongoDB Command](#2024-mongodb-command)
+    - [Quiz](#quiz)
+    - [20.2.5 Relations](#2025-relations)
+    
 
 
 ## 课堂笔记
@@ -229,4 +231,8 @@
 //而在reference的情况下，因为所有course名称都是引用式地被使用，只需要更新course里的document即可
 ```
 
+#### 20.2.6 Advanced Relations Thoughts
+- Bi-directional referencing vs parent-refence or child reference 双边都做reference或者单边做reference
+- Normalization（所有数据只出现一次） vs Denormalization（把数据进行复制）
+- one to millions relationship
 
