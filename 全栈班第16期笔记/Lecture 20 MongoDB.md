@@ -134,4 +134,65 @@
 - `db.students.deleteMany({})`
 - `db.students.drop()`
 
+> 如果一个db里没有数据，它是不会显示在db list里的
 
+#### 20.2.5 Relations
+- 表和表的关系(建立在站在谁的角度上看的）
+  - 1 to 1 (相对的，对于某个student来说，其和address的关系是1对1）
+  - 1 to many
+  - Many to many （一个A可以对应多个B，一个B可以对应多个A）
+    - 学生和课程 多对多
+    - 一个课程只允许一个老师，一个老师只允许上一个课程 1对1
+    - 一个课程允许多个老师，一个老师只允许上一个课程 1对多 
+- 表达关系的形式
+  - Embedded 嵌入式
+  - Reference 引用式  
+ - Example：
+  - 1 to 1 Embedded
+    - id
+    - name
+    - address
+      - city
+      - address
+      - postcode
+  - 1 to 1 Reference
+    - id
+    - name
+    - address：（ address id）
+    -（in another collection）
+    - id
+    - city
+    - address
+    - postcode
+    - student：（student id）
+  - 1 to many Embedded
+    - id
+    - name
+    - addresses
+      - object 0
+        - city
+        - address
+        - postcode
+      - object 1
+        - city
+        - address
+        - postcode
+  - 1 to many Reference
+    - id
+    - name
+    - address
+      - 0
+      - 1
+    - (in another collection)
+    - id: object 0
+    - city
+    - address
+    - postcode
+    - student: (student id) 
+    - id: object 1
+    - city
+    - address
+    - postcode
+    - student: (student id)  
+  - many to many 
+  ![many to many](./img/图50.jpg）       
