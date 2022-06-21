@@ -195,4 +195,38 @@
     - postcode
     - student: (student id)  
   - many to many 
-  - ![many to many](./img/图50.jpg）       
+    - ![many](./img/图50.jpg)
+    - many to many Embedded
+      - S1,S2
+      - C1,C2
+      - students collection
+ ```js
+[
+  {
+    _id:"S1",
+    courses:[
+      {
+        _id:"C1",
+      },
+      {
+        _id:"C2",
+      }
+    ]
+  },
+  {
+    _id:"S2",
+    courses:[
+      {
+        _id:"C1",
+      },
+      {
+        _id:"C2",
+      }
+    ]
+   }
+]
+//如果要更改course名称，需要把所有学生里的该course改一遍，成本非常高昂
+//而在reference的情况下，因为所有course名称都是引用式地被使用，只需要更新course里的document即可
+```
+
+
