@@ -11,6 +11,12 @@
     - [20.2.4 MongoDB Command](#2024-mongodb-command)
     - [Quiz](#quiz)
     - [20.2.5 Relations](#2025-relations)
+    - [20.2.6 Advanced Relations Thoughts](#2026-advanced-relations-thoughts)
+  - [20.3 Advanced Database Knowledge](#203-advanced-database-knowledge)
+    - [20.3.1 Indexes](#2031-indexes)
+    - [20.3.2 Aggregation](#2032-aggregation) 
+    - [20.3.3 Transactions](#2033-transactions)
+   
     
 
 
@@ -234,5 +240,59 @@
 #### 20.2.6 Advanced Relations Thoughts
 - Bi-directional referencing vs parent-refence or child reference 双边都做reference或者单边做reference
 - Normalization（所有数据只出现一次） vs Denormalization（把数据进行复制）
-- one to millions relationship
+  - 数据库规范化(Normalization)是数据库设计的⼀个⾮常重要的基本概念，⽬的是要去除重复的数据，增加数据的⼀致性。实际的作法是会将重复
+的字段，抽出来变成另⼀个新的表
+- one to millions relationship （长度超过百万级的，无法放在数据库的array里）
+- Q：用NoSQL写数据库时，Nomalization和Denormalization是随着商业的需求而改变，并不会说哪个比较好哪个比较不好？
+- A：默认做Normalization，不做数据重复，当遇到实际场景和实际数据支持时（如产品上线），平均花费在数据库请求上的时间是300ms，而其中，寻找关联的表并取回数据一起返回花费的时间是100ms，如果省掉这个关联可以节省100ms，如果该数据库天天在被用户访问，如果可以节省这个时间对于用户体验是一个相当大的改进，这个时候会选择做Denormalization
+- Personal Advice：
+  - 数量级在万以下，可以全部做reference没问题(澳洲大多数公司数据量级达不到万级，没有优化的机会）
+  - Do embedded if you can(especially one to one)
+  - One to couple,consider array of embedded docs
+  - One to many,consider array of references 
+  - One to million, consider parent-reference
+  - If read query is much more than write query, go denormalize
+  - 读数据的情况比写数据的情况多，做embedded能使数据读得更快
 
+#### 20.3 Advanced Database Knowledge
+#### 20.3.1 Indexes
+- 索引是⼀种特殊的数据库结构，由数据表中的⼀列或多列组合⽽成，可以⽤来快速查询数据表中有某⼀特定值的记录
+- 通过索引，查询数据时不⽤读完记录的所有信息，⽽只是查询索引列。否则，库系统将读取每条记录的所有信息进⾏匹配。
+- 可以把索引⽐作新华字典的⾳序表。
+```js
+[
+  d1,d2,d3,d4
+]
+
+mapping（开辟的一个新的空间，作映射）
+[
+  {name:'apple', mapping: d3},d1,d2,d4
+]
+//没有索引，需要把10000个数据全扫一遍
+//有了索引，只需要扫索引然后取到相应的数据
+```
+- 创建索引和维护索引要耗费时间，这种时间随着数据量的增加⽽增加
+  - 只会在必要时加上索引，因为添加新数据时，需要重新计算添加的新数据放在索引的什么地方，耗时间和空间，因此不会在所有地方加上索引
+
+#### 20.3.2 Aggregation
+- Aggregation函数
+  - 聚合操作处理数据记录并返回计算结果。将来自多个文档的操作组值聚合在一起，并可以对分组的数据执行各种操作以返回单个结果，这也被称为分组查询
+  - 通常用于数据分析的情况
+  - 如用户在前端输入firstname空格lastname，如果数据存的是firstname lastname分开的字段，那需要传给server端的数据量会非常大，这时可以使用aggregation pipeline，在数据库这边把相应的结果得到后传给server端
+  - 参考资料：https://www.jianshu.com/p/a1d92a86896b
+- Aggregation pipeline
+```
+[d1,d2,d3]
+[d1,d3] first pipe
+[d1,d3,d4] second pipe
+[d1',d2',d3'] third pipe
+```
+#### 20.3.3 Transactions
+- 数据库事务
+  - 事务是由一条或多条SQL语句组成的逻辑执行单元, 可以比喻成一个容器, 里面放的就是一堆SQL语句, 这些语句要么全部执行成功, 要么一个都无法执行
+  - 常用于银行转账
+  - 当资源的使用产生冲突的时候，有可能使用transaction
+  - 参考资料： https://wenku.baidu.com/view/e90da7143a68011ca300a6c30c2259010202f332.html
+ 
+
+> https://www.datensen.com/data-modeling/moon-modeler-for-databases.html Datensen 画ER diagram的工具
