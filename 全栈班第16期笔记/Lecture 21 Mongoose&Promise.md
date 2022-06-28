@@ -2,11 +2,19 @@
 
 ## 主要知识点
 - [Lecture 12 Mongoose&Promise](#Lecture-12-mongoosepromise)
-
+- [12.1 Promise](#121-promise)
+  - [12.1.1 对比Promise和callback函数](#1211-对比Promise和callback函数)
+- [12.2 async await](#122-async-await)
+- [12.3 finally](#123-finally)
+- [Quiz](#quiz)
+- [12.4 Mongoose](#124-mongoose)
+  - [12.4.1 Schema vs Models vs Documents](#1241-schema-vs-models-vs-documents)
+  - [12.4.2 设计数据库](#1242-设计数据库)
+  - [12.4.3 数据库连接](#1243-数据库连接)
 
 ## 课堂笔记
 
-#### 21.1 Promise
+#### 12.1 Promise
 - call back function 回調函數：當一個函數接受另外一個函數作爲參數時，把該參數稱爲回調函數，
 ```
 //模拟从url中获取数据连接并用cb函数获取数据
@@ -42,6 +50,7 @@ fetchData('example.com', (data)=> {
  ```
  const promise = new Promise((res,rej) => {
     res([]);
+    //reject({})
 })
 ```
   - 待定状态的 Promise 对象要么会通过一个值被兑现，要么会通过一个原因（错误）被拒绝。当这些情况之一发生时，我们用 promise 的 then 方法排列起来的相关处理程序就会被调用。
@@ -51,16 +60,29 @@ promise.then((data) => {
     //data = []
 
     return {};
-    // return new Promise() // async call
+    // return new Promise() // async call //return的任何值等于新创建的一个promise
 }).then().catch((err) => {//.catch()用于抓取或监听错误,返回一个pending状态的promise
-    //err = {}
+    //如果reject({}),这时err = {}
     return {}; //promise
 }).then().catch()
 ```
   - Promise 的链式调用
     - 我们可以用 Promise.prototype.then()、Promise.prototype.catch() 和 Promise.prototype.finally() 这些方法将进一步的操作与一个变为已敲定状态的 promise 关联起来。
 - 把上面嵌套多层的回调地狱转换成promise
-#### 21.1.1 对比Promise和callback函数
+    - 例子：
+```js
+getJSON("/post/1.json").then(function(post){
+	return getJSON(post.commentURL);
+}).then(function funcA(comments){
+	console.log("resolved:",comments);
+}.function funcB(err){
+	console.log("rejected:",err);
+});
+//以上代码中，第一个then方法指定的回调函数，返回的是另一个promise对象，这时，第二个then方法指定的回调函数，就会等待这个新的Promise对象状态发生变化。如果变为resolved，就调用funcA，如果状态变为rejected，就调用funcB。
+
+```
+
+#### 12.1.1 对比Promise和callback函数
 - 将下列callback函数执行的功能用promise重写：
 ```
 function fetchData(url,cb){
@@ -155,7 +177,7 @@ console.log(7);
 // Outputs 7 immediately.
 ```
 
-#### 21.2 async await
+#### 12.2 async await
 - 语法糖，用来简化.then()和.catch()的情况，底层代码实现依旧是promise，但是代码可读性更高
 - 用await 替换之前的.then()
 - 一旦用到await,一定要在包裹这个await的function前加上async关键字
@@ -214,7 +236,7 @@ async function main(){
 main();
 ```
 
-#### 21.3 finally
+#### 12.3 finally
 - 不接收任何参数，放在promise chain的最后面
 ```
 const promise = fetchDataPromise('example.com/1');
@@ -263,12 +285,12 @@ Promise.resolve().then(()=> console.log(6));
 //macro{console.log(1), setTimeout(3),setTimeout(4),setTimeout(5.2)}
 Output:2 5 6 5.1 1 3 3.1 4 5.2
 ```
-#### 21.4 Mongoose
+#### 12.4 Mongoose
 - 是MongoDB专用的ORM (object relational mapper)
 - SQL 数据库使用Sequelize  https://sequelize.org/
 - 基于Mongo Client
 
-#### 21.4.1 Schema vs Models vs Documents
+#### 12.4.1 Schema vs Models vs Documents
 
 ```
 const schema = new mongoose.Schema({name:String});//数据的格式，schemaless数据易于迭代（如储存传感器数据），但是不容易管理
@@ -278,6 +300,82 @@ const document = new Model({name;'document'})
 - 如果mongoDB的数据里有age field ，但是mongoose没有声明age，那么去除的数据也是没有age的
 - 当server发请求给数据库时，数据库会把数据以JSON的格式返回回来，mongoose把JSON转换成一个mongoose object
 - 当想要存储object时，mongoose会把object转换成JSON，放在数据库里
-#### 21.4.2 设计数据库
+#### 12.4.2 设计数据库
 - er diagram
 - 推荐画图软件：https://app.diagrams.net/
+#### 12.4.3 数据库连接
+- 一般会专门建一个文件db.js 管理server与数据库的链接，文件内容如下：
+```
+const mongoose = require('mongoose');
+const logger = require('winston');
+
+const connectToDB = () => {
+    const connectionString = process.env.CONNECTION_STRING;
+    if(!connectionString){
+        //throw Error()
+        logger.error('connection string not defined');
+        //正常退出
+        //非正常退出
+        //人为正常退出 process.exit(0)
+        //人为非正常退出 process.exit(非0)
+        process.exit(1)
+    }
+    const db = mongoose.connection;
+    db.on('connected', () => {
+        logger.info(`DB connected, ${connectionString}`)
+    })
+
+    db.on('error',(error) => {
+        logger.error(error.message);
+        process.exit(2);
+    })
+
+    db.on('disconnected', () => {
+        logger.info('db connection lost');
+    })
+    
+    mongoose.connect(connectionString);
+}
+
+module.exports = connectToDB;
+```
+- 并且在入口文件里加入connectToDB（）
+```
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+const helmet = require('helmet');
+
+
+const v1Router = require('./routes');
+const connectToDB = require('./utils/db');
+
+PORT = process.env.PORT || 3000;
+
+const app = express();
+
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(cors());
+app.use(helmet());
+
+
+app.use('/v1',v1Router);
+
+connectToDB(); //确保connect开启
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+app.listen(PORT, () => {
+    // logger.info(`Example app listening at http://localhost:${PORT}`);
+    console.log(`Example app listening at http://localhost:${PORT}`);
+});
+```
+- 并在env中配置数据库地址
+```
+PORT=4000
+CONNECTION_STRING=mongodb://localhost:27017/jr-cms-16
+```
