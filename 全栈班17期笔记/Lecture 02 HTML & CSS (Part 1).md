@@ -1,5 +1,8 @@
-## 目录
 # Lecture 02 HTML & CSS (Part 1)
+
+## 目录
+
+- [Lecture 03 CSS 进阶](#lecture-03-css-进阶)
 
 - [Lecture 02 HTML&CSS](#lecture-02-htmlcss)
   - [2.0 How HTML, CSS, and JavaScript Work](#20-how-html-css-and-javascript-work)
@@ -14,24 +17,16 @@
     - [2.1.8 超链接`<a>`](#218-超链接a)
     - [2.1.9 Plug-in for VScode](#219-plug-in-for-vscode)
   - [2.2 CSS](#22-css)
-    - [2.2.1 What is CSS]()
-    - [2.2.2 Ways to apply CSS]()
-    - [2.2.3 选择器 Selector]()
-    - [2.2.4 RGB/RGBA Model]()
-    - [2.2.5 Hex Model]()
-    - [2.2.6 Dev tool(Chrome)]()
-    - [3.1.1 File Path](#311-file-path)
-    - [3.1.2 HTML 语义化](#312-html-语义化)
-  - [3.2 CSS 进阶](#32-css-进阶)
-    - [3.2.1 Inheritance](#321-inheritance)
-    - [3.2.2 CSS Box modal](#322-css-box-modal)
-    - [3.2.3 margin](#323-margin)
-    - [3.2.4 padding](#324-padding)
-    - [3.2.5 block 和 inline elements](#325-block和inline-elements)
-    - [3.2.6 position](#326-position)
-    - [3.2.7 Units](#327-units)
-    - [3.2.8 Responsive Web Design](#328-responsive-web-design)
-    - [3.2.9 CSS Library](#329-css-library)
+    - [2.2.1 What is CSS](#221-what-is-css)
+    - [2.2.2 三种 CSS 的应用方式](#222-三种-css-的应用方式)
+    - [2.2.3 选择器 Selector](#223-选择器-selector)
+    - [2.2.4 RGB/RGBA Model](#224-rgbrgba-model)
+    - [2.2.5 继承-inheritance](#225-继承-inheritance)
+    - [2.2.6 CSS box-modal](#226-css-box-modal)
+      - [2.2.6.1 margin](#2261-margin)
+      - [2.2.6.2 padding](#2262-padding)
+    - [2.2.7 Dev tool(Chrome)](#227-dev-toolchrome重要)
+    - [2.2.8 Flexbox](#228-flexbox)
 
 # 课堂笔记
 
@@ -218,6 +213,7 @@ p {
 #### 2.2.3 选择器 Selector
 
 写 CSS 的时候，表明他要附着在什么上面：
+NB: Always use class over id
 
 1. All element `<p>` item 选择
 
@@ -281,3 +277,108 @@ p {
   - 在 Html 中使用 inline css: 加入 class=“first-li”
   - 或在 CSS 里使用 li:first-child\*li:nth-child(3)
   - 或在 CSS 中更具体的指定哪一个 element:article p: first-child
+
+#### 选择`<a>`的属性
+
+- a:link 代表带 href 这个 attribute 的`<a>`
+- a:visited 代表链接点过之后的 style
+- a:hover 代表鼠标移到链接上面的 style
+
+- 补充:此处作用与常用的[TextEffect](https://www.w3schools.com/css/css3_text_effects.asp)和[Tooltips](https://www.w3schools.com/css/css_tooltip.asp)相似
+
+#### 当多个选择器作用于同一个 element 时，哪个会生效？
+
+冲突优先级:
+![comflicting selector 1](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE4.PNG)
+![comflicting selector 2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE5.PNG)
+
+#### 2.2.4 RGB/RGBA Model
+
+每种颜色都可以用 Red、Green、Blue(+Transparency)的结合来表示
+
+> rgb（0，255，255） -----##00fffff（0ff）
+
+- RGB Model 中的 Transparency 被 hardcode 成 1
+
+> rgba（0，255，255，0.3） （最后一项为透明度）
+
+#### 2.2.5 继承 Inheritance
+
+除了跟 text 相关的，其他都不会被继承:
+![img6](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE6.PNG)
+
+#### 2.2.6 CSS Box modal
+
+![img7](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE7.PNG)
+
+- Final element width = left border + left padding + width + right padding + right border
+- top border + top padding + height + bottom padding + bottom border
+
+#### 2.2.6.1 margin
+
+margin: 跟外界的距离，border 的外面，跟着上和左走;
+
+- 两个 div margin 叠加的时候，系统取中间最大值；e.g.一个 margin 50，另一个 60，系统会取 60
+  > margin：auto
+  > 把左边 margin 和右边 margin 能找到的最大空间做一个对半分
+
+#### 2.2.6.2 padding
+
+padding : 25px(top), 50px(right),50px(bottom),25px(left)
+margin 的简写规则和 padding 一致
+
+#### 2.2.7 Dev tool（Chrome）重要！！
+
+快捷键：cmd+shif+i/ctrl+shift+i
+
+- 直接在调试窗口更改 css，以显示效果
+- Console: 查报错，也可以直接写代码，比如
+
+```js
+document.querySelectorAll("h1");
+```
+
+- Sources: 看源文件
+- Network：看加载过程中的请求和文件
+- Performance：看 performance，比如页面加载时间
+- Memory: 看页面 memory 使用情况，不常用
+- Application：用来看 cookie，storage 使用情况
+- Lighthouse:也是用来做 performance，整体的 performance，SEO，Accessibility 等的分析
+- Accessibility
+  - devtools axe-core extension，根据分数给网站调优
+    > 小技巧：可以直接在 Dev Tool 中看一些源码，借鉴到自己项目
+
+#### 2.2.8 Flexbox
+
+注意注释位置的设置
+
+```html
+<head>
+<style>
+.flex-container {
+    /* A Flexible Layout must have a parent element with the <em>display</em> property set to <em>flex</em> */
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>Create a Flex Container</h1>
+
+<!-- Direct child elements(s) of the flexible container automatically becomes flexible items -->
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+</body>
+</html>
+```
