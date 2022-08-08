@@ -216,10 +216,8 @@ NB: Always use class over id
 1. All element `<p>` item 选择
 
 ```css
-/* 其中p是选择器，{}内是declaration */
 p {
   color: red;
-  /* Color是property，red是value */
   text-align: center;
 }
 ```
@@ -263,9 +261,7 @@ p.class1 {
 6. Grouping Selector
 
 ```css
-h1,
-h2,
-p {
+h1, h2 ,p {
   text-align: center;
   color: red;
 }
