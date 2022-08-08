@@ -302,7 +302,8 @@ p {
 
 #### 2.2.5 继承 Inheritance
 
-除了跟 text 相关的，其他都不会被继承:<br/>
+- 除了跟 text 相关的，其他都不会被继承:
+
 ![img6](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE6.PNG)
 
 #### 2.2.6 CSS Box modal
