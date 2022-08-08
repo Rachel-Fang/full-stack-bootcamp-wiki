@@ -2,8 +2,6 @@
 
 ## 目录
 
-- [Lecture 03 CSS 进阶](#lecture-03-css-进阶)
-
 - [Lecture 02 HTML&CSS](#lecture-02-htmlcss)
   - [2.0 How HTML, CSS, and JavaScript Work](#20-how-html-css-and-javascript-work)
   - [2.1 HTML 介绍](#21-html-introduction)
