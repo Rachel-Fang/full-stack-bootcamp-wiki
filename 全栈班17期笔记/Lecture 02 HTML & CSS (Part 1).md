@@ -1,4 +1,5 @@
 ## 目录
+# Lecture 02 HTML & CSS (Part 1)
 
 - [Lecture 02 HTML&CSS](#lecture-02-htmlcss)
   - [2.0 How HTML, CSS, and JavaScript Work](#20-how-html-css-and-javascript-work)
@@ -8,18 +9,17 @@
     - [2.1.3 标题`<h1>`](#213-标题h1)
     - [2.1.4 段落`<p>`](#214-段落p)
     - [2.1.5 `<strong>`和`<em>`](#215-加粗斜体strong和em)
-    - [2.1.6 `<ol>`和`<ul>`](#216-有序和无序-listol和ul)
-    - [2.1.7`<img>`](#217-img)
-    - [2.1.8`<a>`](#218-a)
-    - [2.1.9 HTML 语义化](#219-html-语义化)
+    - [2.1.6 有序和无序 List`<ol>`和`<ul>`](#216-有序和无序-listol和ul)
+    - [2.1.7 插入图片`<img>`](#217-插入图片img)
+    - [2.1.8 超链接`<a>`](#218-超链接a)
+    - [2.1.9 Plug-in for VScode](#219-plug-in-for-vscode)
   - [2.2 CSS](#22-css)
-    - [2.2.1 What is CSS](#221-what-is-css)
-    - [2.2.2 Ways to apply CSS](#222-ways-to-apply-css)
-    - [2.2.3 选择器 Selector](#223-选择器-selector)
-    - [2.2.4 RGB/RGBA Model](#224-rgbrgba-model)
-    - [2.2.5 Hex Model](#225-hex-model)
-    - [2.2.6 Dev tool(Chrome)](#226-dev-toolchrome)
-  - [3.1 Recap](#31-recap)
+    - [2.2.1 What is CSS]()
+    - [2.2.2 Ways to apply CSS]()
+    - [2.2.3 选择器 Selector]()
+    - [2.2.4 RGB/RGBA Model]()
+    - [2.2.5 Hex Model]()
+    - [2.2.6 Dev tool(Chrome)]()
     - [3.1.1 File Path](#311-file-path)
     - [3.1.2 HTML 语义化](#312-html-语义化)
   - [3.2 CSS 进阶](#32-css-进阶)
@@ -146,19 +146,138 @@ HTML 基本结构： open tag + content + closing tag
 
 #### 2.1.7 插入图片`<img>`
 
+```html
+<img src="../images/picture.jpg" alt="Mountain" />
+```
+
 - NB:self-closing 的 tag，一定要定义 src 和 alt
 - 标签包含以下参数
   - src：来源，如果文件在当前路径，直接使用 xxx.jpg, 若在其他地方的 img 文件夹里，更改相对路径至./source folder/xxx.jpg
   - alt: 若 img 加载不出来，提供图片描述
   - height, width 调节图片尺寸
 - 补充: [Html 的文件路径](https://www.w3schools.com/html/html_filepaths.asp)
+  - absolute path: file or directory from the root
+  - relative path: 把 current working directory 加进考虑
+    > . (代表 current directory)
+    > ..（代表 parent directory）
+    > pwd 会把 current working directory 给显示出来
+    > cd chang directory 帮助在 file system 中 navi
 
 #### 2.1.8 超链接`<a>`
 
+```html
+<a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a>
+```
+
 - href：代表链接指向的网页
-- target：\_blank 代表点击链接会跳转到一个新的 tab
+- target：
+  - \_self 在当前页面打开
+  - \_blank 代表点击链接会跳转到一个新的 tab
 
 #### 2.1.9 Plug-in for VScode
 
 - [推荐的 VS Code 插件](https://github.com/Cameron933/JR-17th-Full-Stack-Bootcamp/blob/main/VS%20Code%20Extensions.md)
   > Tips:安装 Live-server 插件后，完成后点击右下角 Go-live 选项，会打开浏览器并实时更新做出修改的内容
+
+#### 2.2 CSS
+
+#### 2.2.1 What is CSS
+
+CSS describes how HTML elements should be displayed.
+
+```css
+/* 其中p是选择器，{}内是declaration */
+p {
+  color: red;
+  /* Color是property，red是value */
+  text-align: center;
+}
+```
+
+- Css 构成如上 Selector + Declaration block + Property + Value + Declaration / Style
+- CSS Rule
+  - 选择器指向要设置样式的 HTML 元素
+  - 声明块包含一个或多个用分号分隔的声明
+  - 每个声明包括一个 CSS 属性名和一个值，用冒号分隔
+  - 多个 CSS 声明用分号分隔，声明块用花括号包围
+
+#### 2.2.2 三种 CSS 的应用方式
+
+1. External style:
+
+   External style(推荐方式): head 里加 link 标签
+
+2. Internal style:
+
+   Internal style: 也是不推荐，会让 html 显得很长
+
+3. Inline style:
+
+   Inline style（最不推荐）: 省略了找 node 的过程，但是非常不推荐，不可复用，无单一性原则
+
+#### 2.2.3 选择器 Selector
+
+写 CSS 的时候，表明他要附着在什么上面：
+
+1. All element `<p>` item 选择
+
+```css
+/* 其中p是选择器，{}内是declaration */
+p {
+  color: red;
+  /* Color是property，red是value */
+  text-align: center;
+}
+```
+
+2. Class Selector 可复用，可叠加，一般最常用
+
+```css
+.className {
+  text-align: center;
+  color: red;
+}
+```
+
+3. Element 和 class 组合
+
+```css
+p.class1 {
+  text-align: center;
+  color: red;
+}
+```
+
+4. Id Selector 只能用在一个 element 里，用一次，所以不是很常用
+
+```css
+#id1 {
+  text-align: center;
+  color: red;
+}
+```
+
+5. Universal Selector
+
+```css
+* {
+  text-align: center;
+  color: blue;
+}
+```
+
+6. Grouping Selector
+
+```css
+h1,
+h2,
+p {
+  text-align: center;
+  color: red;
+}
+```
+
+- 补充： 选择所有的`<li>`的第一个：
+  - 在 Html 中使用 inline css: 加入 class=“first-li”
+  - 或在 CSS 里使用 li:first-child\*li:nth-child(3)
+  - 或在 CSS 中更具体的指定哪一个 element:article p: first-child
