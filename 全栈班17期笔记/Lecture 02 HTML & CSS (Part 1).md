@@ -1,21 +1,37 @@
-# Lecture 02 HTML & CSS (Part 1)
-
 ## 目录
-
-- [Lecture 03 CSS 进阶](#lecture-03-css-进阶)
 
 - [Lecture 02 HTML&CSS](#lecture-02-htmlcss)
   - [2.0 How HTML, CSS, and JavaScript Work](#20-how-html-css-and-javascript-work)
-  - [2.1 HTML Introduction](#21-html-introduction)
+  - [2.1 HTML 介绍](#21-html-introduction)
     - [2.1.1 HTML 基本结构](#211-html-基本结构)
-    - [2.1.2 live server](#212-live-server)
-    - [2.1.3 Headings of the context`<h1>`](#213-h1)
-    - [2.1.4`<p>`](#214-p)
-    - [2.1.5 `<strong>`和`<em>`](#215-strong和em)
-    - [2.1.6 `<ol>`和`<ul>`](#216-ol和ul)
+    - [2.1.2 HTML5 Semantic](#212-html5-semantic)
+    - [2.1.3 标题`<h1>`](#213-标题h1)
+    - [2.1.4 段落`<p>`](#214-段落p)
+    - [2.1.5 `<strong>`和`<em>`](#215-加粗斜体strong和em)
+    - [2.1.6 `<ol>`和`<ul>`](#216-有序和无序-listol和ul)
     - [2.1.7`<img>`](#217-img)
     - [2.1.8`<a>`](#218-a)
     - [2.1.9 HTML 语义化](#219-html-语义化)
+  - [2.2 CSS](#22-css)
+    - [2.2.1 What is CSS](#221-what-is-css)
+    - [2.2.2 Ways to apply CSS](#222-ways-to-apply-css)
+    - [2.2.3 选择器 Selector](#223-选择器-selector)
+    - [2.2.4 RGB/RGBA Model](#224-rgbrgba-model)
+    - [2.2.5 Hex Model](#225-hex-model)
+    - [2.2.6 Dev tool(Chrome)](#226-dev-toolchrome)
+  - [3.1 Recap](#31-recap)
+    - [3.1.1 File Path](#311-file-path)
+    - [3.1.2 HTML 语义化](#312-html-语义化)
+  - [3.2 CSS 进阶](#32-css-进阶)
+    - [3.2.1 Inheritance](#321-inheritance)
+    - [3.2.2 CSS Box modal](#322-css-box-modal)
+    - [3.2.3 margin](#323-margin)
+    - [3.2.4 padding](#324-padding)
+    - [3.2.5 block 和 inline elements](#325-block和inline-elements)
+    - [3.2.6 position](#326-position)
+    - [3.2.7 Units](#327-units)
+    - [3.2.8 Responsive Web Design](#328-responsive-web-design)
+    - [3.2.9 CSS Library](#329-css-library)
 
 # 课堂笔记
 
@@ -28,7 +44,7 @@
   - CSS 用于控制表示、格式和布局
   - JavaScript 用于控制不同元素的行为，响应 user event
 
-#### 2.1 HTML Introduction
+#### 2.1 HTML 介绍
 
 HTML 基本结构： open tag + content + closing tag
 
@@ -88,24 +104,25 @@ HTML 基本结构： open tag + content + closing tag
   </section>
   ```
 
-#### 2.1.3 `<h1>`
+#### 2.1.3 标题`<h1>`
 
 - 从`<h1>` 到`<h6>` 由大到小有各种不同的 Heading，为页面创造视觉层级效果
   > 实际工作时，UI Design 会提供设计样本，Developer 只需要跟着样本开发即可
 
-#### 2.1.4 `<p>`
+#### 2.1.4 段落`<p>`
 
 - 补充:
-  - `<p>`里面可以使用<br/>换行
+  - `<p>`里面可以使用`<br/>`换行
     > 在 XHTML、XML 以及未来的 HTML 版本中，不允许使用没有结束标签（闭合标签）的 HTML 元素。
-    > 即使 <br> 在所有浏览器中的显示都没有问题，使用 <br /> 也是更长远的保障。
+    > 即使 `<br>` 在所有浏览器中的显示都没有问题，使用 `<br />` 也是更长远的保障。
   - 可以使用`<link rel = "icon" href = "" />`:设定 icon
 
-#### 2.1.5 `<strong>`&`<em>`
+#### 2.1.5 加粗&斜体`<strong>`和`<em>`
 
 - 使用对应 tag 包住要强调的元素进行加粗或者斜体
+  - NB: 使用语义话表达的`<strong>`&`<em>`代替`<b>`&`<i>`
 
-#### 2.1.6 有序和无序 list`<ol>`&`<ul>`
+#### 2.1.6 有序和无序 list`<ol>`和`<ul>`
 
 - 都由`<ol>`和`<ul>`作为 parent，`<li>` list item 作为 children
 
@@ -116,7 +133,7 @@ HTML 基本结构： open tag + content + closing tag
 </ol>
 ```
 
-- 补充: description list`<dl>`
+- 补充: [Description list](https://www.w3schools.com/html/html_lists.asp) `<dl>`
 
 ```html
 <dl>
@@ -127,7 +144,7 @@ HTML 基本结构： open tag + content + closing tag
 </dl>
 ```
 
-#### 2.1.7 `<img>`
+#### 2.1.7 插入图片`<img>`
 
 - NB:self-closing 的 tag，一定要定义 src 和 alt
 - 标签包含以下参数
@@ -136,7 +153,7 @@ HTML 基本结构： open tag + content + closing tag
   - height, width 调节图片尺寸
 - 补充: [Html 的文件路径](https://www.w3schools.com/html/html_filepaths.asp)
 
-#### 2.1.8 `<a>`
+#### 2.1.8 超链接`<a>`
 
 - href：代表链接指向的网页
 - target：\_blank 代表点击链接会跳转到一个新的 tab
