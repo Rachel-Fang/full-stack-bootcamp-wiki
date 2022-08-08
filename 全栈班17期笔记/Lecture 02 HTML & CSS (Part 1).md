@@ -20,7 +20,7 @@
     - [2.2.3 选择器 Selector](#223-选择器-selector)
     - [2.2.4 RGB/RGBA Model](#224-rgbrgba-model)
     - [2.2.5 继承-inheritance](#225-继承-inheritance)
-    - [2.2.6 CSS box-modal](#226-css-box-modal)
+    - [2.2.6 CSS box-model](#226-css-box-modal)
       - [2.2.6.1 margin](#2261-margin)
       - [2.2.6.2 padding](#2262-padding)
     - [2.2.7 Dev tool(Chrome)](#227-dev-toolchrome重要)
@@ -302,7 +302,7 @@ h1, h2 ,p {
 
 ![img6](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE6.PNG)
 
-#### 2.2.6 CSS Box modal
+#### 2.2.6 CSS Box model
 
 ![img7](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD%E7%AC%AC16%E6%9C%9F%E7%AC%94%E8%AE%B0/img/%E5%9B%BE7.PNG)
 
