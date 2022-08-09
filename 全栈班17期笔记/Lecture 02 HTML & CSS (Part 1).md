@@ -324,7 +324,7 @@ margin 的简写规则和 padding 一致
 
 #### 2.2.7 Dev tool（Chrome）重要！！
 
-快捷键：cmd+shif+i/ctrl+shift+i
+快捷键：MAC cmd+option+i/ WINDOWS ctrl+shift+i
 
 - 直接在调试窗口更改 css，以显示效果
 - Console: 查报错，也可以直接写代码，比如
