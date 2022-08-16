@@ -37,11 +37,11 @@
   - 主轴（main axis）是沿着 flex 元素放置的方向延伸的轴（可为横纵）
     - 主轴的方向可以使用，flex- direction 进行更改，默认是 row
   - 交叉轴（cross axis）是垂直于 flex 元素放置方向的轴
-    ![flexbox](img/图9.PNG)
+    ![flexbox](img/图9.png)
 
 #### 4.1.1 flex container/flex items
 
-![container/items](img/图10.PNG)
+![container/items](img/图10.png)
 
 #### Flex container
 
@@ -49,9 +49,9 @@
 
 - gap：元素之间的间隔（不包含在 margin 中）, 不能有负值
 - 水平居中 justify-content：沿着 main axis 进行 alignment
-  ![justify](img/图11.PNG)
+  ![justify](img/图11.png)
 - 竖直居中 align-items：沿着 cross axis 进行 alignment，初始值为 stretch
-  ![align](img/图12.PNG)
+  ![align](img/图12.png)
 - flex-wrap：如果 container 不够大，定义 wrap 可以把超出 container 的 element 调节到 newline
 
 #### flex items
@@ -69,12 +69,12 @@
 #### 4.2 Responsive Web Design
 
 The Flexible grids are foundational elements of responsive design
-![RWD](img/图14.PNG)
+![RWD](img/图14.png)
 
 #### 4.2.1 Media query
 
 - 实时读取所使用屏幕尺寸的值，在 ccs 中写入某一条件，当屏幕尺寸到达该条件的值之后，该条件下的 css 会被触发，由此在不同屏幕宽度赋予 element 不同的属性
-  ![media query](img/图13.PNG)
+  ![media query](img/图13.png)
 
 ```css
 @media （max-width: 600px） @media (min-width: 1200px);
@@ -91,7 +91,7 @@ Q：如上图，若屏幕尺寸小 600px，则上面哪个条件会被触发？
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
-![media query2](img/图15.PNG)
+![media query2](img/图15.png)
 
 #### 4.3 SASS/SCSS
 
