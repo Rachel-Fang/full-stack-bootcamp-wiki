@@ -59,7 +59,7 @@ function sum(a, b) {
 js
 console.log('hello world')
 ```
-![JS-helloWorld](/img/JS-helloWorld.png)
+![JS-helloWorld](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/JS-helloWorld.png)
 
 ### 5.2 变量 Variable
 
@@ -237,7 +237,7 @@ teacher.onDuty = true;
 console.log(teacher);
 ```
 >结果：
-![js-object2](/img/js-object2.png)
+![js-object2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-object2.png)
 
 - object显示方法三
 
@@ -252,7 +252,7 @@ teacher['gender'] = 'male';
 console.log(teacher);
 ```
 >结果：gender的语句与其他语句类型不一致，但是也可以加入进来。
-![js-object3](/img/js-object3.png)
+![js-object3](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-object3.png)
 
 - object显示方法四
 
@@ -268,7 +268,7 @@ teacher[gender] = 'male';
 console.log(teacher);
 ```
 >结果：gender的语句与其他语句类型不一致，但是也可以加入进来。
-![js-object4](/img/js-object4.png)
+![js-object4](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-object4.png)
 
 
 - object输出方式：
@@ -288,7 +288,7 @@ console.log(teacher.age);
 console.log(teacher[gender]);
 ```
 >结果：gender的语句与其他语句类型不一致，但是也可以加入进来。
-![js-object输出](/img/js-object%E8%BE%93%E5%87%BA.png)
+![js-object输出](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-object%E8%BE%93%E5%87%BA.png)
 
 ***- object总结***  
 1. object是一个复杂类，由多个primitive value变量组成的。
@@ -312,7 +312,7 @@ console.log(students[2]);
 console.log(students[3]);
 ```
 >结果：
-![js-array1](/img/js-array1.png)
+![js-array1](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-array1.png)
 
 - 显示方法二
 
@@ -329,7 +329,7 @@ var students = [{
 console.log(students[2]);
 ```
 >结果：
-![js-array2](/img/js-array2.png)
+![js-array2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-array2.png)
 
 ### 5.5 运算符
 
