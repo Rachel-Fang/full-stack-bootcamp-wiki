@@ -344,7 +344,7 @@ var concat = 'hello' + ' ' + 'world';
 console.log(concat);
 ```
 >结果：
-![js-加法](/img/js-%E5%8A%A0%E6%B3%95.png)
+![js-加法](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E5%8A%A0%E6%B3%95.png)
 
 #### 5.5.2 减法、乘法、除法
 ```js
@@ -357,7 +357,7 @@ console.log(minus);
 console.log(times);
 ```
 >结果：
-![js-减法、乘法、除法](/img/js-%E5%87%8F%E6%B3%95%E3%80%81%E4%B9%98%E6%B3%95%E3%80%81%E9%99%A4%E6%B3%95.png)
+![js-减法、乘法、除法](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E5%87%8F%E6%B3%95%E3%80%81%E4%B9%98%E6%B3%95%E3%80%81%E9%99%A4%E6%B3%95.png)
 
 #### 5.5.3 严格和不严格相等 / 严格和不严格不等
 ```js
@@ -369,7 +369,7 @@ console.log(equalNonStrict);
 console.log(equalStrict);
 ```
 >结果：
-![js-严格和不严格相等](/img/js-%E4%B8%8D%E4%B8%A5%E6%A0%BC%E5%92%8C%E4%B8%A5%E6%A0%BC%E8%B5%8B%E5%80%BC.png)
+![js-严格和不严格相等](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E4%B8%8D%E4%B8%A5%E6%A0%BC%E5%92%8C%E4%B8%A5%E6%A0%BC%E8%B5%8B%E5%80%BC.png)
 
 ***注意：***
 - 两个等号是不允许使用的。
@@ -459,7 +459,7 @@ console.log(names);
 ```
 
 >结果：
-![js-数组增删](/img/js-%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0.png)
+![js-数组增删](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E6%95%B0%E7%BB%84%E5%A2%9E%E5%88%A0.png)
 
 #### 5.6.2 数组长度
 ```js
@@ -471,7 +471,7 @@ names[101] = 'Tom';
 console.log(names.length);
 ```
 >结果：
-![js-数组长度](/img/js-%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6.png)
+![js-数组长度](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6.png)
 
 #### 5.6.2 如何定位一个数字在数组中的位置
 ```js
@@ -500,7 +500,7 @@ if (age < 18) {
 console.log(age < 18 ? 'You are under 18!' : 'You are over 18!');
 ```
 >结果：
-![ifElse&三联](/img/js-ifElse%26%E4%B8%89%E8%81%94%E8%BF%90%E7%AE%97%E7%AC%A6.png)
+![ifElse&三联](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-ifElse%26%E4%B8%89%E8%81%94%E8%BF%90%E7%AE%97%E7%AC%A6.png)
 
 ### 5.8 Falsey value
     * false
@@ -536,7 +536,7 @@ for (var i = 0; i < 10; i++) {
 }
 ```
 >结果:
-![js-循环语句](./img/js-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.png)
+![js-循环语句](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5.png)
 
 #### 5.9.2 i++和++i
 ***i++: i = i + 1***  
@@ -550,7 +550,7 @@ console.log(i++);
 console.log(i);
 ```
 >结果：
-![js-i++](/img/js-i%2B%2B.png)
+![js-i++](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-i%2B%2B.png)
 
 
 - ++i
@@ -562,7 +562,7 @@ console.log(++i);
 console.log(i);
 ```
 >结果：
-![js-++i](/img/js-%2B%2Bi.png)
+![js-++i](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%2B%2Bi.png)
 
 >***说明：***
 - the 2 operators work the same way
@@ -683,7 +683,7 @@ function firstTen() {
 console.log(firstTen());
 ```
 >结果：
-![js-function1](/img/js-function1.png)
+![js-function1](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-function1.png)
 - 结果一定要有传入和传出的东西，不要忘记return或者console.log。
 
 #### 5.10.2 参数化
@@ -729,7 +729,7 @@ firstTen(4, 5, 100);
 ```
 
 >结果都是：
-![js-function2](/img/js-function2.png)
+![js-function2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-function2.png)
 
 >说明：
 - 可以随意定义变量：上面代码就是找出能被4整除，但是不能被5整除，0~100之间的前10个数字。定义的变量就是：
@@ -781,5 +781,3 @@ console.log(localVar)
 >结论：
 - 在global作用域中，所有的var会提升到global的头段。
 - 在function作用域中，所有的var会提升到function的头段。
-
-#### 5.10.5 parameter和非parameter的区别
