@@ -105,7 +105,7 @@ console.log(student3);
 ```
 
 >结果：
-![JS-多个赋值结果](/img/JS-%E5%A4%9A%E4%B8%AA%E8%B5%8B%E5%80%BC%E7%BB%93%E6%9E%9C.png)
+![JS-多个赋值结果](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/JS-%E5%A4%9A%E4%B8%AA%E8%B5%8B%E5%80%BC%E7%BB%93%E6%9E%9C.png)
 
 #### 5.2.5 数字、字符、布尔输出结果
 ```js
@@ -116,7 +116,7 @@ a = true;
 console.log(a);
 ```
 >结果：
-![js-数字、字符、布尔输出结果](/img/js-%E6%95%B0%E5%AD%97%E3%80%81%E5%AD%97%E7%AC%A6%E3%80%81%E5%B8%83%E5%B0%94%E5%80%BC%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png)
+![js-数字、字符、布尔输出结果](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E6%95%B0%E5%AD%97%E3%80%81%E5%AD%97%E7%AC%A6%E3%80%81%E5%B8%83%E5%B0%94%E5%80%BC%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png)
 
 #### 5.2.6 工程化代码：
 - 变量的属性不要变来变去，不要一会儿是数字，一会儿是字符，一会儿又是布尔值。要单一。否则随着代码量越来越大，代码会很难看出到底是什么。
@@ -132,7 +132,7 @@ console.log(car);
 var car;
 ```
 >结果：
-![js-hoisting](/img/js-hoisting.png)
+![js-hoisting](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-hoisting.png)
 
 >说明：
 - JavaScript引擎的⼯作⽅式是，先解析代码，获取所有被声明的变量，然后再⼀⾏⼀⾏地运⾏。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做***变量提升***。*（junior常考面试题）*
@@ -169,7 +169,7 @@ if (isNaN(aNum)) {
 }
 ```
 >结果：
-![js-aNum](/img/js-aNum.png)
+![js-aNum](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-aNum.png)
 
 #### 5.4.2 字符串（string）：字符组成的⽂本（⽐如”jiangren”）
     - both string and character
@@ -185,7 +185,7 @@ console.log(amIAGuy);
 console.log(amIAWoman);
 ```
 >结果：
-![js-布尔输出](/img/js-%E5%B8%83%E5%B0%94%E8%BE%93%E5%87%BA.png)
+![js-布尔输出](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-%E5%B8%83%E5%B0%94%E8%BE%93%E5%87%BA.png)
 
 #### 5.4.4 undefined：表示“未定义”或不存在，即⽬前没有定义。
     - 不存在
@@ -201,7 +201,7 @@ console.log(age);
 console.log(gender);
 ```
 >结果：
-![js-undefined&null](/img/js-undefined%26null.png)
+![js-undefined&null](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-undefined%26null.png)
 
 >以上称为基础数据类型（primitive values）
 
@@ -224,7 +224,7 @@ teacher = {
 console.log(teacher);
 ```
 >结果：
-![js-object1](/img/js-object1.png)
+![js-object1](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-object1.png)
 
 - object显示方法二
 
