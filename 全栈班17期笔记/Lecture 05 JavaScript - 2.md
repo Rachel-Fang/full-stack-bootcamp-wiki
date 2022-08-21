@@ -97,7 +97,7 @@ console.log(anotherString);
 
 #### 5.2.2 Javascript Data Type
 
-![js-dataType](/img/js-dataType.png)
+![js-dataType](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-dataType.png)
 
 - 老师讲解网址：https://blog.devgenius.io/mutable-and-immutable-in-javascript-78a3cbc6187c
 
@@ -105,7 +105,7 @@ console.log(anotherString);
 - stack里的数据可以被非常快速的进行调取。有点类似于内存。硬盘大，读取速度慢；内存小，但是读取速度快。
 - 在做reassignment的时候，值可以被复制粘贴，会被作为一个新的内容添加到stack上。被reassignment的variable从此就有了自己独立的stack空间，那里储存的就是实际的值。相当于粘贴复制。
 
-![js-valueTypes](/img/js-valueTypes.png)
+![js-valueTypes](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-valueTypes.png)
 
 >图片说明：
 - 开始有个name叫Maya，var name这个variable会指向stack中的某一段，这个段实际储存了Maya的值。
@@ -120,7 +120,7 @@ console.log(anotherString);
 
 - 在primitive世界当中，我们只需要用到stack，在reference types（object或array）中，stack和heap都会用上。
 
-![js-referenceTypes](/img/js-referenceTypes.png)
+![js-referenceTypes](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-referenceTypes.png)
 ```js
 js
 var Person = {name: "Maya", age: "29"}
@@ -135,7 +135,7 @@ var newPerson = Person;
     - 通过在stack中相对应的位置来找到内存地址；
     - 通过内存地址再到heap里面找到实际的值。
 
-![js-heap&stack](/img/js-heap%26stack.png)
+![js-heap&stack](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/img/js-heap%26stack.png)
 
 >图片说明：
 - stack储存粘贴过后的值，因为这两个值是相等的，所以他们最终指向的是一个地方，那个地方储存object，是被共享的。
