@@ -1,3 +1,5 @@
+Author: Cameron, Leon, Vander
+
 ### 1.0 Server-side application
 #### What is backend development?
 - 后端开发意味着在服务器端软件上工作，该软件专注于您在网站上看不到的所有内容。后端开发人员确保网站正常运行，重点关注数据库、后端逻辑、应用程序编程接口 （API）、体系结构和服务器。它们使用可帮助浏览器与数据库通信、存储、理解和删除数据的代码。
