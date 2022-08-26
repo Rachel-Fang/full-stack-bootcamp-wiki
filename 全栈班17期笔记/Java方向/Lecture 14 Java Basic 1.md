@@ -29,7 +29,7 @@ Author: Cameron, Leon, Vander
 > 其余了解即可
 - Version Control 部分
 > 概念需要清楚，什么应该放在Version Control里面，像git ignore，比如pipeline相关的这种file，还有一些script，docker file相关的需要放。
-> 比如，Java这种只放source其他不放，所有的output过程中，Build出来的.class和炸包，这些必须全部都exclusive的. 这样一来，如果dependency管理和code维护的好，那么使用一样的JDK和gradle可以和本机build出来一样的class
+> 比如，Java这种只放source其他不放，所有的output过程中，Build出来的.class和Jar，这些必须全部都exclusive的. 这样一来，如果dependency管理和code维护的好，那么使用一样的JDK和gradle可以和本机build出来一样的class
 ![Roadmap2](./img/Roadmap2.png)
 - DB部分
 > NodeJS常用NoSQL,而我们Java用Relational DB多，我们的课会将PostgreSQL作为例子.
