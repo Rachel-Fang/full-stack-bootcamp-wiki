@@ -2,6 +2,12 @@
 
 课程链接： https://jiangren.com.au/program-course/web-code-bootcamp-or-learn-to-code-1
 
+## Web 全栈班第 17 期笔记：
+
+[Web 全栈 17 期通用笔记](全栈班17期笔记/)
+[Web 全栈 17 期 Java 笔记](全栈班17期笔记/Java方向/)
+[Web 全栈 17 期 Nodejs 笔记](全栈班17期笔记/Nodejs方向/)
+
 ## Web 全栈班往期笔记：
 
 ## Web 全栈班第 16 期笔记：
