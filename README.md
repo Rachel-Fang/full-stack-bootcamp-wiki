@@ -4,17 +4,17 @@
 
 ## Web 全栈班第 17 期笔记：
 
-[Web 全栈 17 期通用笔记](全栈班17期笔记/)
-[Web 全栈 17 期 Java 笔记](全栈班17期笔记/Java方向/)
+[Web 全栈 17 期通用笔记](全栈班17期笔记/)  
+[Web 全栈 17 期 Java 笔记](全栈班17期笔记/Java方向/)  
 [Web 全栈 17 期 Nodejs 笔记](全栈班17期笔记/Nodejs方向/)
 
 ## Web 全栈班往期笔记：
 
-## Web 全栈班第 16 期笔记：
+### Web 全栈班第 16 期笔记：
 
 [Web 全栈 16 期笔记](全栈班第16期笔记/)
 
-## Web 全栈班第 14 期通用笔记：
+### Web 全栈班第 14 期通用笔记：
 
 [Web 全栈第 2 节课 HTML & CSS](全栈班13期笔记/Class-02-HTML.md)  
 [Web 全栈第 3 节课 CSS 进阶](全栈班13期笔记/Class-03-CSS.md)  
@@ -22,11 +22,11 @@
 [Web 全栈第 5 节课 Git](全栈班13期笔记/Class-05%20Git.md)  
 [Web 全栈第 9 节课 Agile](全栈班13期笔记/Class-09-Agile-14.md)
 
-## Web 全栈班 14 期 Java 笔记：
+### Web 全栈班 14 期 Java 笔记：
 
 [Web 全栈班 14 期 Java 班笔记](JR_Web_FullStack14_Java_Note.md)
 
-## Web 全栈班第 14 期 Node.js 笔记：
+### Web 全栈班第 14 期 Node.js 笔记：
 
 [Web 全栈第 6 节课 JavaScript ES6 Part1](s14/Class-06-ES6-14.md)  
 [Web 全栈第 7 节课 JavaScript ES6 Part2 & Node.js](s14/Class-07-ES6&NodeJS-14.md)  
@@ -35,7 +35,7 @@
 [Web 全栈第 10 节课 RESTfulAPI & Express](s14/Class-10-RESTfulAPI&Express-14.md)  
 [Web 全栈第 11 节课 Middleware](s14/Class-11-Middleware-14.md)
 
-## Web 全栈班 13 期笔记：
+### Web 全栈班 13 期笔记：
 
 [Web 全栈第 6 节课 JavaScript ES6 Part1](全栈班13期笔记/Class-06-JS.md)  
 [Web 全栈第 7 节课 JavaScript ES6 Part2](全栈班13期笔记/Class-07-JS.md)  
@@ -49,7 +49,7 @@
 [Web 全栈 Java 班第 1 节课 Java 后端基础](全栈班13期笔记/ClassJ-09.md)
 [Web 全栈 Node.js 班第 1 节课 Node.js 基础](全栈班13期笔记/ClassN-09.md)
 
-## Web 全栈班 早期笔记：
+### Web 全栈班 早期笔记：
 
 [Web 全栈班 12 期 Nodejs 班笔记](匠人web全栈12期N笔记.md)  
 [Web 全栈班 12 期 Java 班笔记](JR_Web_FullStack12_Java_Note.md)  
