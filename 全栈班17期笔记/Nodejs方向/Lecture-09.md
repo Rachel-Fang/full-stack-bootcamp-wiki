@@ -62,12 +62,12 @@
     - 前端开发好后，会打包好一个个静态文件，这些静态文件就是HTML、CSS、JS、images、icons等assets。静态打包好，再部署到一个静态服务器上。
     - 我们在请求一个页面的时候，浏览器首先回去请求这些静态物件，然后前端进行一个相应的渲染。
     - 其中JS的运行的时候，可能涉及到某一个数据页面上没有，需要请求服务器，从服务器取回相应的数据。（图片变成如下：）
-    ![图片2]([/img/](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/%E5%9B%BE%E7%89%872.png))
+    ![图片2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/%E5%9B%BE%E7%89%872.png)
     - 假如从静态服务器里面取出来的数据，长成中间图片的样子。
     - 搜索框所涉及到的功能，它会搜索最新的新闻，但是这些新闻不属于静态文件，它是动态更新的。所以这些数据是一直更新的状态。
     - 如果我们想搜索，这个请求会进入到backend server，server进行一些相应的逻辑处理之后，会返回到一些数据显示在页面上。
     - 在请求的过程当中，会对前端页面进行处理，也就是在请求过程当中，会有一个loading的effect：（即请求发出，显示loading）
-    ![图片3]([/img/](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/%E5%9B%BE%E7%89%873.png))
+    ![图片3](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/%E5%9B%BE%E7%89%873.png)
     - 等到数据回来，可以显示出来了，我们把loading去掉，显示实际的新闻。
     - 以上是完整的请求流程。
 - 我们想了解Nodejs，首先要明白backend server具体发生了什么。
