@@ -176,6 +176,6 @@ public class FunctionInterfaces {
 ```
 
 ### 04 单元测试
-![unit test](/img/unit_test.png)
+![unit test](./img/unit_test.png)
 ![utPriciple](./img/ut_principle.png)
 
