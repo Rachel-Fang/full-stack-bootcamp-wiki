@@ -103,6 +103,7 @@ for (int i = 0; i < vehicles.length; i++) {
 	    -   扩展抽象类的子类需要覆盖所有抽象方法并提供特定的实现。
 **重要**！ Functional Interfaces:
 - An interface that has a single abstract method is called a functional interface
+
 举例：
 ```java
 public class FunctionInterfaces {  
