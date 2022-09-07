@@ -118,8 +118,30 @@ server.listen(3000);
     - 当event被触发之后，我们会用相应的function，针对这个event进行处理。
 - Non-blocking I/O（input and output）
     - I/O就是Asynchronous的request。
-    - 比如漏了一些
+    - 比如从我们的本地磁盘漏了一些files，这些就是I/O（input and output）
 - Often used for building back-end services 
+    - 我们一般用nodejs来搭建我们后端的server，但它并不是绝对的，我们也可以用nodejs来做很多其他的事情。
+    - 比如我们可以用nodejs写一个脚本，它不是server，它只是一个，只执行一次的脚本。它会从上到下执行代码。等所有逻辑执行完，没有任何事件了，它就会退出。这是一个**脚本**。
+    - 同时也可以用它来开发桌面单的**应用程序**。比如VScode，它也是用Nodejs开发的。只不过这种桌面端的应用程序，会用到一个**framework：Electron**。（有兴趣可以自己了解一下）
 - Fast and scalable 
+    - Fast体现在它的开发上面。前端开发一定是JS。当前后端用一种语言的时候，开发效率很快。
+        - 响应也是要分场景来看。nodejs弊端是一个单线进程，跟JS一样，一次只能执行一段了逻辑。如果在执行中，如果遇到了非常耗费资源的计算，整个线程（thread）是被block住的。这样对于server是非常不好的事情。所以对于nodejs来说，我们会尽量避免把一些heavy computing的操作写在主线程里，或者不放nodejs里面。我们可以通过调用其他程序的方式，一些heavy computing放到其他语言里面来做，通过调用进行执行。简单来说，我们不像在node里，或者JS里处理heavy computing的操作。
+    - scalable （容不容易扩展）
+        - 1w个用户，1个server处理；10w用户，需要增加9个server来处理。这就涉及到server是否容易scale。
+        - 用nodejs来开发，整个server都处于stateless（API中会讲到）的状态。即server本身没有状态，不记录任何状态，它容易scale up（增加新server，处理新请求）。
+
+
+### 9.1.2 Node.js Architecture
+
+***主要分为三层***
+- Application（APP）
+    - 我们所有开发几乎都是在这层进行的。涉及到package的调用，这时会用到API和mapping。
+- API
+- C/C++ Library
+    - 底层逻辑。
+
+
+- 比较资深的nodejs开发，可以些C++的代码，加一层binding。
+    
 
 
