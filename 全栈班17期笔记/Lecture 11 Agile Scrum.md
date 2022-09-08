@@ -17,7 +17,7 @@
 
 #### 11.1 为什么使用敏捷开发？
 #### 11.1.1 Software Development Life Cycle（SDLC)
-  ![SDLC](./img/图33.PNG)
+  ![SDLC](./img/SDLC.png)
   - Designer 会在Design阶段提供详细的设计图，Detailed Design（API、UI、UE、color等）
   - Developer在Build阶段进行coding，Devops创建云端framework
   - Stabilize测试阶段，unit test，integration test
@@ -28,7 +28,7 @@
 
 
 #### 11.1.2 SDLC Model软件开发生命周期的两种模型
-  ![SDLC](./img/图34.PNG)
+  ![SDLC](./img/Vmodel.png)
 	- 陈旧的项目管理方式
 	- Waterfall是从上至下的，无法回到上一阶段
 	- V Model是Waterfall的一种改进，致力于严格项目的测试。
@@ -37,7 +37,7 @@
 	- 迭代式开发Iterative，沟通communication，拥抱变化changes，working results
 	- 抛弃了detailed design，只需要产品能用working
 	- 从上至下 —> 连接成圈  
-	 ![Agile1](./img/图35.PNG)
+	 ![Agile1](./img/Agile.png)
 	
 	 - 一个圈就是一个iteration
 	 - Design > Develop > Test > Deploy > Review，在Review中做的不好的部分会在下一个iteration中继续讨论
@@ -48,7 +48,8 @@
 - Customer Collaboration > Contract Negotiation 先与customer合作讨论
 - change > plan 
 #### 11.2.2 Agile Principles
-![Agile2](./img/图36.PNG)
+![Monalisa](./img/Ray.png)
+![Agile2](./img/Agile2.png)
   - 实际工作中，Business People 和developer需要经常面对面沟通，如每天的standup meeting
 	- 要保证用最好的质量做好已经有的需求，让明天的工作更加容易
 	- 没有提的需求就不要做， 让今天的工作更少一点
@@ -56,7 +57,7 @@
 - Agile原则是：①减少浪费 ②快速产出 ③不断地带 ④交流沟通 ⑤响应变化
 
 #### 11.3 什么是Scrum？
-![Scrum1](./img/图37.PNG)
+![Scrum1](./img/Methodologies.png)
 - Sprint
   - 四个步骤
     - Sprint Planning 定计划
@@ -77,7 +78,7 @@
   - Lightweight tool for enabling business agility 
   - Simple to understand, yet difficult to master（scrum master有相对应的证书）
   
-  ![Scrum2](./img/图38.PNG)
+  ![Scrum2](./img/Scrum.png)
   
   - Roles 团队成员
     - Scrum Master（确保流程能顺利往下走）
@@ -102,7 +103,7 @@
   A：Product Manager管理产品流程全程，Product Owner是团队的一部分，只是把产品的需求进行解释
   
 - Scrum 3355
- ![Scrum3](./img/图39.PNG)
+ ![Scrum3](./img/Scrum3355.png)
   
 	- Scrum Retrospective Meeting
 		- 会有dashboard，可以往上贴贴纸，不会强迫说出来
