@@ -1,4 +1,4 @@
-## 1.自我介绍
+## 1.龙哥上课风格
 https://au.linkedin.com/in/long-zhao-32a96916a
 - 15年毕业起开始做freelancer
 - 17年程序员正式出道
