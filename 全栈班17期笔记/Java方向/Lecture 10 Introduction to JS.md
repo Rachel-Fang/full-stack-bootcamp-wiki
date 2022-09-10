@@ -275,6 +275,19 @@ ATO 由于疫情，调整了缴税比例，大幅下调了 3W7 到9W的税率，
 
 }
  ```
+ 每写一个If else扇自己一个耳光
+   ```js
+let flights = [{origin:"MEL", destination:"HKG"}];
+let stopMapping = {
+    1:"Direct",
+    2:"1 stop"
+}
+
+function getStop (flights)
+{
+    return stopMapping[flights.length] || (flights.length - 1) + "stops" 
+}
+  ```
 
  课堂练习（作业二）第一遍：
  ```js
@@ -615,4 +628,3 @@ function calculateTax(income)
               27: 'Around The World`,
             }[stop] || stop + 'stops'; 
   ```
-
