@@ -196,8 +196,8 @@ https://au.linkedin.com/in/long-zhao-32a96916a
     }
     ```
 
-## 3.课上作业：感受痛点
-作业一 FlightStops
+## 3.课上作业：
+
 ```
 given by an array of flights, returns stops statement to user.
 ex.
@@ -218,7 +218,7 @@ getStops(flights) // 'Direct'
 
 arr.length 1 -> Direct 2 -> 1 stop 3 -> 2 stops 4 -> 3 stops 5 -> 4 stops n -> ... stop
 ```
-作业二 TaxCalculation
+课下作业 TaxCalculation
 |Income thresholds | Rate | Tax payable on this income |
 |------------------|------|----------------------------|
 |$0 – $18,200      |  0%  | Nil|
@@ -226,7 +226,7 @@ arr.length 1 -> Direct 2 -> 1 stop 3 -> 2 stops 4 -> 3 stops 5 -> 4 stops n -> .
 |$37,001 – $90,000 | 32.5%| $3,572 plus 32.5% of amounts over $37,000|
 |$90,001 – $180,000| 37%  | $20,797 plus 37% of amounts over $90,000|
 |$180,001 and over | 45%  | $54,096 plus 45% of amounts over $180,000|
-ATO 由于疫情，调整了缴税比例，大幅下调了 3W7 到9W的税率，调低为 23.5%， 9W和 18W也要做到相应的下调
+
  ```js
  function calculateTaxPayable(income){
 
