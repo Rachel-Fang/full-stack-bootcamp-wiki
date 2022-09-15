@@ -1,8 +1,26 @@
-## 目录
+
+- [Fundamental of Node.js](#fundamental-of-nodejs)
+- [RESTful API](#restful-api)
+  - [9.1 Node.js](#91-nodejs)
+  - [9.1.1 About Node.js](#911-about-nodejs)
+  - [9.1.2 Node.js Architecture](#912-nodejs-architecture)
+  - [9.1.3 Node.js Version](#913-nodejs-version)
+  - [9.1.4 Coding](#914-coding)
+  - [9.2 Protocol协议](#92-protocol协议)
+  - [9.3 URL的组成](#93-url的组成)
+  - [9.4 HTTP Methods](#94-http-methods)
+  - [9.5  HTTP Headers](#95--http-headers)
+  - [9.6 Response (status) code](#96-response-status-code)
+  - [9.7 JSON](#97-json)
+  - [9.8 SOAP](#98-soap)
+  - [9.9 API](#99-api)
+  - [9.10 REST (Representational state transfer)](#910-rest-representational-state-transfer)
+  - [9.11 Restful API 设计规范](#911-restful-api-设计规范)
+  - [9.12 Microservices](#912-microservices)
+  - [9.13 Practice](#913-practice)
 
 
-
-
+***PPT内容***
 
 ## Fundamental of Node.js
 - About the course
@@ -12,7 +30,6 @@
 - Event Loop in browser
 - Node versions
 - Let’s coding
-
 
 ## RESTful API
 - Protocol
@@ -176,17 +193,109 @@ server.listen(3000);
 - 选择版本的时候，不会选择current版本，通常是从active选。确保已经过更新，已经稳定的版本。当前来说用16.
 - 企业项目需要更新nodejs版本的时候，要先研究nodejs的版本代码是否会对企业代码产生影响，然后再更新。
 - nvm：node version management
+- 快速切换node版本：nvm use 版本号
+
+
+### 9.1.4 Coding
+
+```js
+index.js
+
+const module = { exports : {} }; 
+
+( function (module) {
+    const msg = 'secret message';
+
+    function getMsg() {
+        return msg;
+    }
+
+    module.exports = { getMsg };
+})(module);
+```
+>**说明：**
+- module是个对象，对象里有个属性叫exports；
+- 然后声明一个变量，同时创建了一个函数；
+- 使用传入function的一个参数module；
+- 把module的exports属性，赋值为一个object；
+- 在object里面，把getMsg放在引号里。
+
+- 可以理解为刚开始的时候，module里什么也没有；
+- 执行完括号内之后，module里面有个exports属性；
+- exports属性，就会有一个getMsg属性，它是一个function；
+- 通过执行这个function，可以得到'secret message'.
+
+
+
+```js
+index.js
+
+const obj = { exports : {} }; 
+
+( function (module) {
+    let msg = 'secret message';
+
+    // msg = '123';
+
+    function getMsg() {
+        return msg;
+    }
+    module.exports = {getMsg}
+})(obj);
+
+obj.exports.getMsg();
+```
+>**说明：**
+- 用括号的目的是把一些变量隐藏起来，变成一个私有变量的概念。
+- 为了外部能访问到msg，我们传入一个object叫module。
+- 让module的reference不变，改变exports这个属性，让exports得到一个新的reference。
+- 达到目的：我们想要把function导出，同时隐藏msg这个变量。
 
 
 
 
+```js
+index.js
 
-### 9.1 Protocol协议
+const msg = 'secret message';
+
+function getMsg() {
+    return msg;
+}
+    
+module.exports = {getMsg}
+
+```
+>**说明：**
+- 括号内的处理，是nodejs帮我们做的。
+- nodejs就是把每一个JS文件，通过一个括号，把它打包起来。
+- module会传exports、_dirname、_filename、require，这些参数都会通过括号的方式传给我们。
+- 最常见的是module和require。 
+- 建议大家用module.exports方式进行导出。
+- require是当我们想要导入一些模块/module的时候，想在其他地方使用它：
+```js
+app.js
+
+const msg = require('./index');
+// msg.getMsg();
+const msg = getMsg();
+console.log(msg);
+```
+
+**几种常见的module**
+- commonJS：进行模块化处理
+- ES module：前端进行模块化处理
+- AMD：前端行模块化处理
+- UMD
+
+
+
+
+### 9.2 Protocol协议
+ 
 - protocol协议相当于一个固定的格式，双方之间交流沟通的前提：
 	- 如写信的时候要写收信人的姓名地址电话，才知道谁来收这封信 
-- HTTP（HyperText Transmission Protocol）是我们最熟悉的协议：
-	- 打开Chrome浏览器的地址栏，前面会有https的前缀，这个前缀就是该网站的协议，https相比http，加上了一层安全层，给数据进行加密
-	- 最常用的http协议是 http1.1 和 http2，我们在开发阶段会使用http1.1的协议，https需要我们自己加一个验证来保证数据是保密的，且https是基于http2协议上的，***p3会需要我们给server买域名，到那时我们可以考虑要不要使用http2协议***
+
 - TCP （Transmission Control Protocol）和 IP（Internet Protocol）最大的用处是：
 	- IP 让我们知道请求的目标地在哪里，TCP帮助我们把请求安全有序地传递到目标位置
 	- TCP 建立链接需要三次挥手，断开连接需要四次挥手：
@@ -196,9 +305,13 @@ server.listen(3000);
 
 	- 了解更底层的知识可以了解什么是[OSI mode](https://www.forcepoint.com/cyber-edu/osi-model)
 
-### 9.2 URL的组成
+- HTTP（HyperText Transmission Protocol）是我们最熟悉的协议：
+	- 打开Chrome浏览器的地址栏，前面会有https的前缀，这个前缀就是该网站的协议，https相比http，加上了一层安全层，给数据进行加密
+	- 最常用的http协议是 http1.1 和 http2，我们在开发阶段会使用http1.1的协议，https需要我们自己加一个验证来保证数据是保密的，且https是基于http2协议上的，***p3会需要我们给server买域名，到那时我们可以考虑要不要使用http2协议***
 
-![URL](img/图30.PNG)
+### 9.3 URL的组成
+
+![URL](/img/URL.png)
 
 - URL全称：Uniform Resource Identifier 统一资源标识符
 	- Protocol协议部分：包括http、MongoDB协议，省略不写一般是https协议 
@@ -210,14 +323,14 @@ server.listen(3000);
 - Q:  现在的验证用户不用auth的方法了，那他们现在用的是什么方法呢？
 - A：使用token，用户登陆时会发一个请求携带用户名和密码，这个请求发到后端会返回一个token，任何携带该token的用户都等于该用户本人，token可以进行加密
 
-### 9.3 HTTP Methods
+### 9.4 HTTP Methods
 - GET 一般发送请求时，取得数据
 - POST 数据添加
 - PUT 更新数据，数据替换
 - DELETE 删除数据
 - PATCH 更新部分数据 与PUT类似 按公司规定使用
 
-### 9.4 HTTP Headers
+### 9.5  HTTP Headers
 - 可以使用curl命令查看HTTP request， linux和MacOS可以直接使用，Windows需要安装
 - Request Headers部分：
 	- 第一行格式：GET / HTTP/2     METHOD PATH PROTOCOL
@@ -233,7 +346,7 @@ server.listen(3000);
 	- Referer: 告诉信息收集平台，用户从哪里来的，例如Google，程序会收集headers来分析用户来源比
 	- User-Agent: 用户通过哪个浏览器访问
 	- Access-Control-Allow-Origin： **开发时会碰到** 以下错误 如果client发的请求返回的数据，没有‘access-control-allow-origin’ header会被浏览器拦截，属于跨域访问，使用CORS anywhere可以设定允许哪些跨域访问
-	![Acces-Control-Allow-Origin](img/图31.PNG)
+	![Acces-Control-Allow-Origin](img/图31.PNG) 
 - Authorization Header: `<Type> <credentials>`
 	- Type部分：
   		- `Basic` username and password
@@ -242,7 +355,14 @@ server.listen(3000);
   	- header的信息是可以伪造的,所以不能百分百相信.
   	- x-custom : 自定义的header, 明确告诉server这个是自定的/server要求自定义header以用作其他用途 
 
-### 9.5 Response (status) code
+
+***这节课一定要记住的内容：***
+- URL
+- HTTP Methods
+- Authorization Header
+
+
+### 9.6 Response (status) code
 - 200 OK 表示请求发送成功
 - 201 Created 表示post请求的添加操作成功了
 - 204 No content 表示请求发送成功但是不返回任何内容，delete request表示删除成功会发这个
@@ -253,21 +373,29 @@ server.listen(3000);
 - 404 Not Found 找不到数据或资源
 - 500 Internal Server Error 服务端内部错误，尽量不要出现在生产环境
 
-### 9.6 JSON
+
+### 9.7 JSON
 - XML和JSON的区别：JSON语法更简单，使用key value pair，可读性更高，XML有open tag closing tag，在JSON之前使用XML格式，现在已经渐渐被JSON取代
 - 序列化与反序列化：javascript 的一个object转化成一个字符串（json），字符串（json）转换成 javascript object
 - Json 不支持 undefined 的 value, 所以如果当数据里有undefine的情况, 它的key会消失(或者说就不存在了)
 - 以下做法会经常被使用在深拷贝上：
 `console.log(JSON.stringfy(course));`
 `console.log(JSON.parse(JSON.stringify(course)));`
-### 9.7 SOAP
-- Simple Object Access Protocol , 这个protocal比较注重权限和安全性,在设计上会比较复杂
+
+
+### 9.8 SOAP
+- Simple Object Access Protocol , 这个protocol比较注重权限和安全性,在设计上会比较复杂
 - 一个安全性很高的协议，银行，政府会使用
-### 9.8 API
+
+
+### 9.9 API
 - Application programming interface 应用程序编程接口
 - 可被外部访问的接口被称为public API，或web service网络服务
 - 它对一些复杂的逻辑进行了封装和解释,记录函数/组件的使用方法(可以的话尽量做到”代码即注释“)
-### 9.9 REST (Representational state transfer)
+
+
+
+### 9.10 REST (Representational state transfer)
 - 本身概念很难理解，作为开发者只需要理解如何使用
 - 可以通过看URL大概知道该请求是做什么的，如：GET /books
 - Rest可以帮助定位我们想要的资源，并且进行相应的操作
@@ -275,7 +403,10 @@ server.listen(3000);
 	- 有两个请求A和B，A和B发送的先后顺序不同，得到的结果是一模一样的，现在的server端开发基本都是无状态
 - Stateful 有状态：
 	- A和B发送顺序错误会导致访问不到  
-### 9.10 Restful API 设计规范
+
+
+
+### 9.11 Restful API 设计规范
 1. versioning（版本）出现在url后面，版本号后面跟实际的资源(加上版本控制确保改动不波动到所有用户正在运营的项目P)
 - 例如
 	- example.com/api/v1
@@ -286,6 +417,7 @@ server.listen(3000);
 - 例如：
 	- GET /v1/books
 	- GET /v1/getBooks x
+  
 3. 保证GET 不会对资源进行修改（污染）
 - 例如：
 	- GET /v1/books（只读数据，而不作更新或修改）
@@ -295,11 +427,13 @@ server.listen(3000);
 	- GET /posts/:postId/comments
 	- GET /posts/{postId}/comments 
 	- GET /posts/post123/comments 
+  
 5. 对返回的数据进行分页（注意返回的大小）
 - 如果有1000个数据，取回来也不可能全部显示在页面上，用户也不大可能把数据全部看完，为了避免浪费和更长的传输时间， 因此需要对返回的数据进行分页
 	- 例如：
 		- GET /v1/books ->该请求永远只返回10个数据
 		- GET /v1/books?page=26pageSize=100 ->给该请求加query frame 每页100个数据 
+  
 6. 使用正确的status code来表示返回的结果
 
 7. 尽量返回人性化的文本信息（错误信息）
@@ -307,7 +441,10 @@ server.listen(3000);
 	- {”error“：”invalid password“}
 	- {”error“：1001} // 不友好的 error code
 
-### 9.11 Microservices
+
+
+
+### 9.12 Microservices
 ![monolith](img/图32.jpg)
 -  一种服务端的设计架构
 - monolith server
@@ -322,13 +459,9 @@ server.listen(3000);
 - Q：GraphQL为什么没有取代Restful API？
 - A：GraphQL学习成本更高，且有很多不支持的功能，如文件上传
 
-### Practise  
-- Use postman to practise api calls
+
+### 9.13 Practice  
+- Use postman to practice api calls
 - https://newsapi.org/
 - 开发时先用注释表示流程，有助于面试思路
-### 作业
-- 创建账户作为训练师，抓pokemon，放pokemon，训练Pokemon
-- http://poke-world-server.herokuapp.com/
-
-
 
