@@ -16,7 +16,7 @@
   - [9.9 API](#99-api)
   - [9.10 REST (Representational state transfer)](#910-rest-representational-state-transfer)
   - [9.11 Restful API 设计规范](#911-restful-api-设计规范)
-  - [9.13 Practice](#913-practice)
+  - [9.12 Practice](#912-practice)
 
 
 ***PPT内容***
@@ -441,7 +441,7 @@ console.log(msg);
 	- {”error“：1001} // 不友好的 error code
 
 
-### 9.13 Practice  
+### 9.12 Practice  
 - Use postman to practice api calls
 - https://newsapi.org/
 - 开发时先用注释表示流程，有助于面试思路
