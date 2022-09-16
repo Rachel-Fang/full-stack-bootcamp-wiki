@@ -441,29 +441,7 @@ console.log(msg);
 	- {”error“：1001} // 不友好的 error code
 
 
-<<<<<<< HEAD
 ### 9.12 Practice  
-=======
-
-
-### 9.12 Microservices
-![monolith](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/Microservices.jpg)
--  一种服务端的设计架构
-- monolith server
-- 原本的每个服务会单独拆分出来(根据用户访问量等),每个service都有它自己独立的数据库和server,所有的请求由api gateway转发给不同的server
-- service互相调用数据的话必须通过该对应的servcer的api接口去调用
-- 嵌套结构，/library/{libId}/book
-- 优点：其中任何一个service挂掉，不会影响整体的工作，如Product坏了，用户的注册不会受到任何的影响
-
-- Q：什么是Lambda？
-- A：相当于server里的一个具体的逻辑，讲其抽出来放到server上
-
-- Q：GraphQL为什么没有取代Restful API？
-- A：GraphQL学习成本更高，且有很多不支持的功能，如文件上传
-
-
-### 9.13 Practice  
->>>>>>> 53c581140c8c605f65b80d899bd53b24215f3498
 - Use postman to practice api calls
 - https://newsapi.org/
 - 开发时先用注释表示流程，有助于面试思路
