@@ -106,7 +106,7 @@
 
 ### Kanban
 
-![Kanban](/img/Kanban.png)
+![Kanban](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/Kanban.png)
 
 ***Standup***
 
@@ -127,10 +127,10 @@
 ### Agile Backlog
 
 ***Work Item***
-![workItem](/img/workItem.png)
+![workItem](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/workItem.png)
 
 ***Product Backlog Items (PBIs)***
-![productBacklogItems](/img/ProductBacklogItems.png)
+![productBacklogItems](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/ProductBacklogItems.png)
 
 ***让团队里的人有时间学习新知识。***
 - **technical work**：refactor、version update
@@ -139,7 +139,7 @@
 
 ***User Story – New Features***
 - User Story = persona(我是谁) + need(我要什么) + purpose(我要达到怎样的目的)
-![UserStory](/img/UserStory.png)
+![UserStory](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/UserStory.png)
 
 
 ***举牌子*** 
