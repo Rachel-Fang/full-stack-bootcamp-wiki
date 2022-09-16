@@ -137,15 +137,15 @@ app.post('/:id',(req,res, next)=>{
 	- call stack中的下一个middleware function
 	- 注意：如果现有的middleware function没有结束request-response循环，它必须call next（）把控制权交给下一个middleware function. Otherwise，这个请求就会left hanging（请求搁置），永远不会返回 
 
-- ![route](./img/图40.jpg)
-  ![cycle](./img/图41.jpg)
+- ![route](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/route.jpg)
+  ![cycle](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/cycle.jpg)
   - 浏览器发出请求，server进行路径匹配，匹配成功触发callback，否则404；
-	- ![path](./img/middlewarep-pathpic.jpg)
+	- ![path](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/path.jpg)
   
   	  middleware一系列是怎么挨个触发的（重点看菱形节点-路径分叉口的位置）
   	  - 0个-无限个middleware function可以注册到节点上, 多个节点也可注册相同的middleware function
       - 在请求进来后，根据请求的路径，会触发一系列的middleware function，middleware chain的排列顺序是根据请求的路径来看的
-      - ![function](./img/图42.jpg)
+      - ![function](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/function.jpg)
       - middleware function的触发顺序是由路径决定的，最终到达route handler
   - 匹配method
 	- 注册middleware时可以选择根据path进行注册，也可以选择根据method进行注册
