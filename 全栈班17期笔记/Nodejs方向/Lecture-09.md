@@ -16,7 +16,6 @@
   - [9.9 API](#99-api)
   - [9.10 REST (Representational state transfer)](#910-rest-representational-state-transfer)
   - [9.11 Restful API 设计规范](#911-restful-api-设计规范)
-  - [9.12 Microservices](#912-microservices)
   - [9.13 Practice](#913-practice)
 
 
@@ -440,24 +439,6 @@ console.log(msg);
 - 例如：
 	- {”error“：”invalid password“}
 	- {”error“：1001} // 不友好的 error code
-
-
-
-
-### 9.12 Microservices
-![monolith](img/图32.jpg)
--  一种服务端的设计架构
-- monolith server
-- 原本的每个服务会单独拆分出来(根据用户访问量等),每个service都有它自己独立的数据库和server,所有的请求由api gateway转发给不同的server
-- service互相调用数据的话必须通过该对应的servcer的api接口去调用
-- 嵌套结构，/library/{libId}/book
-- 优点：其中任何一个service挂掉，不会影响整体的工作，如Product坏了，用户的注册不会受到任何的影响
-
-- Q：什么是Lambda？
-- A：相当于server里的一个具体的逻辑，讲其抽出来放到server上
-
-- Q：GraphQL为什么没有取代Restful API？
-- A：GraphQL学习成本更高，且有很多不支持的功能，如文件上传
 
 
 ### 9.13 Practice  
