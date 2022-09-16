@@ -91,7 +91,7 @@
 		- `npm run {scripts}`可以简写为`npm {script}`
 
 ### 10.4 Semantic version
-```json
+```js
 "dependencies"：{
 	"express"："^4.16.4"
 	// major.minor.patch
