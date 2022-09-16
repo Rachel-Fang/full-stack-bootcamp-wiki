@@ -6,14 +6,14 @@
 
 ***sequence diagram：时序图*** 
 
-![SequenceDiagram](/img/SequenceDiagram.png)
+![SequenceDiagram](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/SequenceDiagram.png)
 
-![restService](/img/restService.png)
+![restService](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/restService.png)
 
 
 ### 10.1 MicroServices
 
-![microServices](/img/microServices.png)
+![microServices](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/microServices.png)
 
 -  一种服务端的设计架构
 - monolith server
@@ -31,12 +31,12 @@
 
 ### 10.2 API Authentication（验证） & Authorization（授权）
 
-![APIAuthentication&Authorization]()
+![APIAuthentication&Authorization](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/APIAuthentication%26Authorization.png)
 
 - 验证就是看你是谁，用户名和密码是否正确。
 - 授权就是看你能够干什么，是否有权限访问和修改某些数据。
 
-![APIAuthentication&Authorization2]()
+![APIAuthentication&Authorization2](https://github.com/australiaitgroup/full-stack-bootcamp-wiki/blob/main/%E5%85%A8%E6%A0%88%E7%8F%AD17%E6%9C%9F%E7%AC%94%E8%AE%B0/Nodejs%E6%96%B9%E5%90%91/img/APIAuthentication%26Authorization2.png)
 
 - 用户、webApp是浏览器、REST Backend是后端服务器。
 - 流程：
