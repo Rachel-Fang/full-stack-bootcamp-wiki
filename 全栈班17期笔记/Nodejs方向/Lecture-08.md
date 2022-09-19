@@ -524,7 +524,7 @@ calendar.nextDay();
     setTimeout ((function () {
         this.currentDay++;
         console.log(this.currentDay);
-    })).bind(this); 
+    }).bind(this)); 
     ```
     - function外面加上一层()，然后再加上.bind(this)，表示给这个function进行bind操作，bind会返回一个新的function。其实是创建好这个function，给它做一个bind，得到一个新的function，再把这个新的function传给setTimeout。
     - 我们bind的，既不是setTimeout，也不是nextDay，我们bind的是传给setTimeout的callback function。
